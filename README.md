@@ -1,39 +1,117 @@
-# Immersive-ARMRVR
+# Immersive Parametric Modeler - ARMRVR
 
-# Immersive Parametric Modeler
 
-A production-ready, multi-user, VR/MR-first parametric modeling platform built for makers, engineers, and designers. Think Fusion 360 meets Gravity Sketch — with ECAD + MCAD support and AI-powered text-to-3D generation.
+A production-grade, VR/MR-first, multi-user parametric modeling system for engineers, makers, and designers — supporting full MCAD and ECAD interoperability, AI-assisted modeling, and future expansion into Vision Pro and WebXR ecosystems.
 
-## 🚀 Project Vision
+---
 
-- Full parametric modeling in immersive 3D space (Meta Quest 3, Apple Vision Pro)
-- ECAD & MCAD integration (STEP, BRD, KiCad, Gerber)
-- Multi-user collaboration in real-time
-- Local-first engine using OpenCascade (free kernel)
-- Modular AI assistant for basic commands and full text-to-3D generation
-- Future-ready architecture with optional cloud offload
+## 🚀 Project Goals & Milestones
 
-## ✨ Core Features (Planned)
+### ✅ MVP Goals (3-Month Target)
+1. **Unity Front-End (Meta Quest 3)**
+   - [ ] Multi-user enabled XR scene with Photon Fusion/Normcore
+   - [ ] VR interaction: grab, move, sketch, extrude
+   - [ ] Local parameter editing via 3D UI
 
-- Sketch, extrude, fillet, revolve in VR with live parametric control
-- Import/export: STEP, IGES, STL, BREP, BRD, KiCad, GLTF
-- Text/voice prompt: “Create a 40mm gear with 3mm bore” → 3D object
-- Multi-user design sessions with version history
-- VR UI for geometry editing, constraints, and assemblies
+2. **OpenCascade Integration**
+   - [ ] Import & visualize: `.step`, `.iges`, `.stl`, `.brep`
+   - [ ] Basic parametric shape generation (box, cylinder, etc.)
+   - [ ] Parametric editing interface
 
-## 🛠️ Tech Stack
+3. **ECAD Format Support**
+   - [ ] Load `.brd`, `.kicad_pcb`, `.sch`, `.gerber`
+   - [ ] 3D visualization of PCB layouts
+   - [ ] Link components to MCAD constraints
 
-- Unity 2022 LTS (XR Toolkit, Meta SDK)
-- OpenCascade for geometry kernel
-- Photon Fusion or Normcore (multi-user)
-- Ollama + TRELLIS / FlexiCubes / Hunyuan (AI backend)
-- GitHub-hosted modular codebase
+4. **AI Integration (Local)**
+   - [ ] Ollama assistant: command to parametric operation
+   - [ ] Placeholder UI for text-to-3D pipeline
 
-## 📁 Directory Overview
+5. **GitHub Repository Structure**
+   - [ ] Modular codebase
+   - [ ] Documentation folder for internal planning
+   - [ ] MIT License, `README.md`, `.gitignore`, CI config
+
+---
+
+## 📂 Directory Structure
 
 ```bash
-/client/         # Unity front-end
-/server/         # Optional cloud backend (text-to-3D API, storage)
-/kernel/         # OpenCascade integration
-/ai_assistant/   # AI command parsing
-/docs/           # UX designs, planning docs
+/immersive-parametric-modeler/
+│
+├── /client/                     # Unity VR client (Meta Quest 3)
+│   ├── Scenes/
+│   ├── Scripts/
+│   ├── Prefabs/
+│   └── UI/
+│
+├── /server/                     # Optional cloud backend (API, AI, sync)
+│   ├── meshgen_api/
+│   ├── parametric_api/
+│   └── auth/
+│
+├── /kernel/                     # OpenCascade bridge and wrappers
+│   └── cad_core/
+│
+├── /ai_assistant/               # Ollama integration + text command parsing
+│   └── parser.py
+│
+├── /ecad/                       # ECAD file parsers & visualizers
+│   ├── gerber/
+│   ├── kicad/
+│   └── eagle/
+│
+├── /exports/                    # CAD export modules (STEP, STL, OBJ, etc)
+│
+├── /docs/                       # Planning docs, UX wireframes, architecture
+│   ├── goals.md
+│   ├── formats.md
+│   └── roadmap.pdf
+│
+├── LICENSE
+├── README.md
+└── .gitignore
+```
+
+---
+
+## 🌐 Supported Formats (Planned)
+
+### 🔍 MCAD
+- `.step`, `.stp`
+- `.iges`, `.igs`
+- `.stl`, `.obj`, `.fbx`
+- `.brep`, `.glb`, `.gltf`
+
+### 🛠️ ECAD
+- `.brd`, `.kicad_pcb`, `.sch`
+- `.gerber` (RS-274X)
+- `.dxf`, `.bom`, `.net`
+
+### 📄 Script/Data
+- `.scad`, `.json`, `.yaml`, `.toml`
+- `.urdf`, `.sdf` (for robotics config)
+
+---
+
+## 🚪 Future-Proofing
+
+- [ ] Support for Apple Vision Pro (Unity PolySpatial or RealityKit bridge)
+- [ ] WebXR version (browser-based access)
+- [ ] Full cloud mode: mesh + parametric compute on remote servers
+- [ ] Text-to-3D with DALL·E, Hunyuan, TRELLIS, FlexiCubes
+
+---
+
+## ✉️ Contribution & Community
+
+- All contributions will follow GitHub Issues + PR process
+- Clear module ownership & code standards
+- Monthly update logs & roadmap reviews
+- External contributors welcome post-MVP
+
+---
+
+## 🌍 License
+
+MIT License — use freely with attribution. Commercial licenses and integrations will be offered in the future.
